@@ -1,0 +1,46 @@
+# KnowledgeBot 🤖  
+
+A conversational knowledge assistant built with **Java** and **Gradle**.  
+KnowledgeBot leverages rule-based policies (`policies.json`) and a client integration layer to provide interactive responses.  
+
+---
+
+## 🚀 Features
+- Conversational AI backend
+- Configurable policies (`src/main/resources/policies.json`)
+- Gradle build system for easy setup & dependencies
+- Modular design for future extensions
+- Demo video included
+
+---
+
+## 🛠️ Tech Stack
+- **Java 17+**
+- **Gradle** (Kotlin DSL)
+- **GSON / JSON Processing** (if policies parsing is used)
+
+---
+
+## ⚙️ Setup & Run
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/mohsinjaved1165/AI-Initiative---KnowledgeBot.git
+cd AI-Initiative---KnowledgeBot
+
+  ---
+
+##  Build the project
+./gradlew build
+
+
+  ---
+## Run the application
+./gradlew run
+
+
+  --
+
+##  Demo
+
+A short demonstration of KnowledgeBot is included in docs folder
