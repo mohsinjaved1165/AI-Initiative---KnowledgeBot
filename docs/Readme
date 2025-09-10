@@ -28,6 +28,9 @@ KnowledgeBot leverages rule-based policies (`policies.json`) and a client integr
 git clone https://github.com/mohsinjaved1165/AI-Initiative---KnowledgeBot.git
 cd AI-Initiative---KnowledgeBot
 
+./gradlew clean run --args="How many paternity leave are there for employees?"
+./gradlew clean run --args="How many paid leaves do we get per year?"
+
   ---
 
 ##  Build the project
