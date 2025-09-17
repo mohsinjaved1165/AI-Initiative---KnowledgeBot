@@ -1,49 +1,95 @@
-# KnowledgeBot 🤖  
+# AI-Powered HR Policy Assistant (KnowledgeBot)
 
-A conversational knowledge assistant built with **Java** and **Gradle**.  
-KnowledgeBot leverages rule-based policies (`policies.json`) and a client integration layer to provide interactive responses.  
+The HR Policy Assistant is an AI-powered chatbot that helps employees quickly find answers to company policies such as leave, remote work, benefits, reimbursements, and more.
 
----
+It combines:
 
-## 🚀 Features
-- Conversational AI backend
-- Configurable policies (`src/main/resources/policies.json`)
-- Gradle build system for easy setup & dependencies
-- Modular design for future extensions
-- Demo video included
+Java (Gradle project) → Initial prototype 
 
----
+FastAPI (Python) → Backend REST API (to expose /ask endpoint)
 
-## 🛠️ Tech Stack
-- **Java 17+**
-- **Gradle** (Kotlin DSL)
-- **GSON / JSON Processing** (if policies parsing is used)
+Streamlit (Python) → Web UI (chat-like interface for users)
 
----
+Policies JSON → Knowledge base for responses
 
-## ⚙️ Setup & Run
+🚀 Features
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/mohsinjaved1165/AI-Initiative---KnowledgeBot.git
-cd AI-Initiative---KnowledgeBot
+✅ Ask questions about HR policies in natural language
 
-./gradlew clean run --args="How many paternity leave are there for employees?"
-./gradlew clean run --args="How many paid leaves do we get per year?"
+✅ Knowledge base stored in a single policies.json file
 
-  ---
+✅ Clean and intuitive web UI (Streamlit)
 
-##  Build the project
-./gradlew build
+✅ REST API (/ask endpoint via FastAPI)
+
+✅ Predefined examples to guide users
+
+✅ Categories sidebar for better navigation
+
+Ask questions about HR policies in natural language
+
+Clean and intuitive web UI (built with Streamlit)
+
+REST API (/ask endpoint) for programmatic access
+
+Policies loaded from policies.json (easy to update)
+
+Example categories: Leave, Remote Work, Health Insurance, Salary, Performance Reviews
+
+🛠️ Setup Instructions
+1. Clone the Repository
+git clone https://github.com/mohsinjaved1165/knowledgebot.git
+cd knowledgebot
+
+2. Create & Activate Virtual Environment
+python3 -m venv venv
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate      # Windows
+
+3. Install Dependencies
+pip install -r requirements.txt
+
+▶️ Running the Project
+1. Start FastAPI Backend
+uvicorn api:app --reload
 
 
-  ---
-## Run the application
-./gradlew run
+Runs at: http://localhost:8000
+
+Endpoint:
+
+curl -X POST http://localhost:8000/ask \
+     -H "Content-Type: application/json" \
+     -d '{"question": "What is the leave policy?", "userId": "demo"}'
+
+2. Start Streamlit Frontend
+streamlit run ui.py
 
 
-  --
+Runs at: http://localhost:8501
 
-##  Demo
+💡 Example Questions
 
-A short demonstration of KnowledgeBot is included in docs folder
+"Tell me about leave policy?"
+
+"What is the maternity leave policy?"
+
+"What’s the remote work policy?"
+
+"Tell me about working hours?"
+
+📂 Project Structure
+knowledgebot/
+│── api.py              # FastAPI backend
+│── ui.py               # Streamlit frontend
+│── policies.json       # Knowledge base
+│── requirements.txt    # Python dependencies
+│── README.md           # Documentation
+
+📝 Notes
+
+Update policies.json to add/change company policies.
+
+Backend + UI communicate via http://localhost:8000/ask.
+
+Easily deployable to Heroku, Vercel, or Docker for production.
